@@ -7,7 +7,7 @@ AirBender::AirBender(string nnombre, double nhp, double ndefensa, double nofensa
 double AirBender::ataqueEspecial(Bender* enemy)
 {
 	double  mod = 1;
-	if(typeid(*enemy) == typeid(FireBender))
+	if(typeid(*enemy) == typeid(FireBender) || nombre == "Aang")
 		mod += 0.15;
 	mod += roll();
 	
@@ -20,12 +20,26 @@ double AirBender::ataqueEspecial(Bender* enemy)
 
 void AirBender::recover(Bender* enemy)
 {
-	cout << endl << "Solo el waterbender puede recuperar vida.\n";
+	if(nombre == "Aang")
+		if(fuerza >= 110)
+	        hp += 75;
+	else
+		cout << endl << "Solo el waterbender puede recuperar vida.\n";
 }
 
 void AirBender::spy(Bender* enemy)
 {
-	cout << endl << "Solo el earthbender puede espiar al enemigo.\n";
+	if(nombre == "Aang")
+	{
+		cout << endl << "Estado del enemigo:";
+		cout << "\nNombre: " << enemy->nombre;
+		cout << "\nDefensa: " << enemy->defensa;
+		cout << "\nOfensa: " << enemy->ofensa;
+		cout << "\nFuerza: " << enemy->fuerza;
+		cout << "\nSuerte: " << enemy->suerte << endl;
+	}
+	else
+		cout << endl << "Solo el earthbender puede espiar al enemigo.\n";
 }
 
 double AirBender::roll()
