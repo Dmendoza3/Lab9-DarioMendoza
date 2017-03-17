@@ -10,7 +10,7 @@ Bender::Bender(string nnombre, double nhp, double ndefensa, double nofensa, doub
 	suerte = nsuerte;
 }
 
-double roll()
+/*double Bender::roll()
 {
 	if(suerte <= 5)
 	{
@@ -37,6 +37,4 @@ double Bender::ataque(Bender* enemy)
     enemy->hp -= ((nhp < 0)?0:nhp);
 
 	return nhp;
-}
-
-~Bender(){}
+}*/
