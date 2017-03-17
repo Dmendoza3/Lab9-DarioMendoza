@@ -17,7 +17,7 @@ double EarthBender::ataqueEspecial(Bender* enemy)
 	return nhp;
 }
 
-void EarthBender::recover(Bender* enemy)
+void EarthBender::recover()
 {
     cout << endl << "Solo el waterbender puede recuperar vida.\n";
 }
@@ -57,6 +57,7 @@ double EarthBender::ataque(Bender* enemy)
     double nhp = enemy->hp;
     nhp = (ofensa * (1 + roll())) - enemy->defensa;
     enemy->hp -= ((nhp < 0)?0:nhp);
-
+	
+	cout << endl << nombre << " causa " << nhp << " de daño a " << enemy->nombre << endl;
     return nhp;
 }

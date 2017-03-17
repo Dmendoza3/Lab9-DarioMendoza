@@ -13,7 +13,7 @@ int main()
 {
 	srand(time(NULL));
 
-	vector<Bender*> benders;
+	vector<Bender*> bender;
 	//(string nnombre, double nhp, double ndefensa, double nofensa, double nfuerza, int nsuerte)
 	bender.push_back(new AirBender("Aang", 100, 20, 70, 200, 10));
 	bender.push_back(new WaterBender("Karara", 90, 10, 50, 200, 5));
@@ -42,10 +42,10 @@ int main()
 
 	exit:
 
-	delete vector[0];
-	delete vector[1];
-	delete vector[2];
-	delete vector[3];
+	delete bender[0];
+	delete bender[1];
+	delete bender[2];
+	delete bender[3];
 	return 0;
 }
 
@@ -56,7 +56,7 @@ void fight(Bender* bender1, Bender* bender2)
 	while(bender1->hp > 0 || bender2->hp > 0)
 	{
 		battle = true;
-		Bender* benderAtacante, benderDefensor;
+		Bender  *benderAtacante, *benderDefensor;
 		if(turno)
 		{
 			benderAtacante = bender1;
@@ -83,7 +83,7 @@ void fight(Bender* bender1, Bender* bender2)
 		{
 			case 1: benderAtacante->ataque(benderDefensor); break;
 			case 2: benderAtacante->ataqueEspecial(benderDefensor); break;
-			case 3: benderAtacante->recover(benderDefensor); break;
+			case 3: benderAtacante->recover(); break;
 			case 4: benderAtacante->spy(benderDefensor); break;
 			case 5: cout << "\nJugador " << turno + 1 << "Huye del combate.\n"; return;
 		}

@@ -1,8 +1,8 @@
-main:	AirBender.o WaterBender.o EarthBender.o FireBender.o Bender.o
+main:	AirBender.o WaterBender.o EarthBender.o FireBender.o Bender.o main.o
 	g++ AirBender.o WaterBender.o EarthBender.o FireBender.o Bender.o main.o -o main
 
-main.o:	AirBender.o WaterBender.o EarthBender.o FireBender.o Bender.o
-	g++ AirBender.o WaterBender.o EarthBender.o FireBender.o Bender.o -c
+main.o:	AirBender.h WaterBender.h EarthBender.h FireBender.h Bender.h main.cpp
+	g++ AirBender.cpp WaterBender.cpp EarthBender.cpp FireBender.cpp Bender.cpp main.cpp -c
 
 Bender.o: Bender.h
 	g++ Bender.cpp -c

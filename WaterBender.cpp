@@ -17,7 +17,7 @@ double WaterBender::ataqueEspecial(Bender* enemy)
 	return nhp;
 }
 
-void WaterBender::recover(Bender* enemy)
+void WaterBender::recover()
 {
     if(fuerza >= 110)
 		hp += 75;
@@ -54,5 +54,6 @@ double WaterBender::ataque(Bender* enemy)
     nhp = (ofensa * (1 + roll())) - enemy->defensa;
     enemy->hp -= ((nhp < 0)?0:nhp);
 
+	cout << endl << nombre << " causa " << nhp << " de daño a " << enemy->nombre << endl;
     return nhp;
 }

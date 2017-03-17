@@ -24,12 +24,12 @@ class Bender
 		//Metodos
 		virtual double ataque(Bender*) = 0;
 		virtual double ataqueEspecial(Bender*) = 0;
-		virtual void recover(Bender*) = 0;
+		virtual void recover() = 0;
 		virtual void spy(Bender*) = 0;
 		virtual double roll() = 0;
 
 		//Destructor
-		virtual ~Bender();
+		virtual ~Bender(){}
 };
 
 #endif
