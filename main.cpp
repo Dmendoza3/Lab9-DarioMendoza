@@ -16,7 +16,7 @@ int main()
 	vector<Bender*> bender;
 	//(string nnombre, double nhp, double ndefensa, double nofensa, double nfuerza, int nsuerte)
 	bender.push_back(new AirBender("Aang", 100, 20, 70, 200, 10));
-	bender.push_back(new WaterBender("Karara", 90, 10, 50, 200, 5));
+	bender.push_back(new WaterBender("Katara", 90, 10, 50, 200, 5));
 	bender.push_back(new EarthBender("Toph", 150, 50, 80, 200, 4));
 	bender.push_back(new FireBender("Zuko", 170, 50, 90, 200, 3));
 
@@ -37,7 +37,7 @@ int main()
 			if(b1 == 0 || b2 == 0)
 				goto exit;
 		}while(b1 < 1 || b1 > 4 || b2 < 1 || b2 > 4 || b1 == b2);
-		fight(bender[b1], bender[b2]);
+		fight(bender[b1 - 1], bender[b2 - 1]);
 	}
 
 	exit:
@@ -53,11 +53,11 @@ void fight(Bender* bender1, Bender* bender2)
 {
 	bool battle = false;
 	int turno = 0;
-	while(bender1->hp > 0 || bender2->hp > 0)
+	while(bender1->hp > 0 && bender2->hp > 0)
 	{
 		battle = true;
 		Bender  *benderAtacante, *benderDefensor;
-		if(turno)
+		if(!turno)
 		{
 			benderAtacante = bender1;
 			benderDefensor = bender2;
@@ -67,7 +67,7 @@ void fight(Bender* bender1, Bender* bender2)
 		}
 
 		int op = 0;
-		cout << "\nTurno: Jugador " << turno + 1 << endl
+		cout << "\nTurno: " << benderAtacante->nombre << endl
 		<<		"1. Ataque\n"
 		<<		"2. Ataque Especial\n"
 		<<		"3. Recuperar\n"
@@ -85,7 +85,7 @@ void fight(Bender* bender1, Bender* bender2)
 			case 2: benderAtacante->ataqueEspecial(benderDefensor); break;
 			case 3: benderAtacante->recover(); break;
 			case 4: benderAtacante->spy(benderDefensor); break;
-			case 5: cout << "\nJugador " << turno + 1 << "Huye del combate.\n"; return;
+			case 5: cout << endl << benderAtacante->nombre << " Huye del combate.\n"; return;
 		}
 		
 		//Cambio de turno

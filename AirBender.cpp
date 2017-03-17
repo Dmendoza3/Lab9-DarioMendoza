@@ -14,6 +14,8 @@ double AirBender::ataqueEspecial(Bender* enemy)
 	double nhp = enemy->hp;
     nhp = (ofensa * mod) - enemy->defensa;
     enemy->hp -= ((nhp < 0)?0:nhp);
+	
+	cout << endl << nombre << " causa " << nhp << " de daño a " << enemy->nombre << endl;
 
 	return nhp;
 }
@@ -22,7 +24,10 @@ void AirBender::recover()
 {
 	if(nombre == "Aang")
 		if(fuerza >= 110)
+		{
 	        hp += 75;
+			cout << "\nAang recupero 75 puntos de vida";
+		}
 	else
 		cout << endl << "Solo el waterbender puede recuperar vida.\n";
 }

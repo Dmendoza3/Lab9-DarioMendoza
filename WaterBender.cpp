@@ -14,13 +14,18 @@ double WaterBender::ataqueEspecial(Bender* enemy)
     nhp = (ofensa * mod) - enemy->defensa;
     enemy->hp -= ((nhp < 0)?0:nhp);
 
+	cout << endl << nombre << " causa " << nhp << " de daño a " << enemy->nombre << endl;
+
 	return nhp;
 }
 
 void WaterBender::recover()
 {
     if(fuerza >= 110)
+	{
 		hp += 75;
+		cout << nombre << " recupero 75 puntos de vida.\n";
+	}
 }
 
 void WaterBender::spy(Bender* enemy)
