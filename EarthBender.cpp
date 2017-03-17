@@ -49,7 +49,7 @@ double EarthBender::roll()
     }
     else
     {
-        if((rand() % 100) % 3 == 0)
+        if((rand() % 10) % 3 == 0)
             return 0.50;
     }
     return 0;

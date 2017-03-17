@@ -15,7 +15,7 @@ int main()
 
 	vector<Bender*> bender;
 	//(string nnombre, double nhp, double ndefensa, double nofensa, double nfuerza, int nsuerte)
-	bender.push_back(new AirBender("Aang", 100, 20, 70, 200, 10));
+	bender.push_back(new AirBender("Aang", 100, 30, 70, 200, 10));
 	bender.push_back(new WaterBender("Katara", 90, 10, 50, 200, 5));
 	bender.push_back(new EarthBender("Toph", 150, 50, 80, 200, 4));
 	bender.push_back(new FireBender("Zuko", 170, 50, 90, 200, 3));
