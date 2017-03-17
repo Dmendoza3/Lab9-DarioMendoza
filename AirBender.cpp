@@ -38,6 +38,7 @@ void AirBender::spy(Bender* enemy)
 	{
 		cout << endl << "Estado del enemigo:";
 		cout << "\nNombre: " << enemy->nombre;
+		cout << "\nHP: " << enemy->nombre;
 		cout << "\nDefensa: " << enemy->defensa;
 		cout << "\nOfensa: " << enemy->ofensa;
 		cout << "\nFuerza: " << enemy->fuerza;
